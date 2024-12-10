@@ -1,6 +1,7 @@
 import streamlit as st
 import function
 todos = function.get_todos()
+st.set_page_config(layout="wide")
 
 def add_todo():
     todo = st.session_state["new_todo"]
@@ -13,7 +14,7 @@ def add_todo():
 
 st.title("My Todo App")
 st.subheader("This is my subheader")
-st.write("This app is to improve your productivity")
+st.write("This app is to improve your <b>productivity</b>", unsafe_allow_html=True)
 #FILEPATH = "todos.txt"
 #todos = function.get_todos("todos.txt")
 for index, todo in enumerate (todos):
